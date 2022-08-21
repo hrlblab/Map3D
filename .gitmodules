@@ -1,0 +1,3 @@
+[submodule "ANTS/ANTs"]
+	path = ANTS/ANTs
+	url = https://github.com/ANTsX/ANTs.git
