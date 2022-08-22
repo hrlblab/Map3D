@@ -1,6 +1,6 @@
 # Map3D-Registration: An End-to-end Pipeline for 3D Slide-wise Multi-stain Renal Pathology Registration
 
-### [[Accelerated Pipeline Docker]](https://github.com/MASILab/SLANTbrainSeg/tree/master/python)[[Project Page]](https://github.com/hrlblab/Map3D)[[Journal paper]](https://arxiv.org/pdf/2006.06038.pdf)<br />
+### [[Accelerated Pipeline Docker]](https://github.com/MASILab/SLANTbrainSeg/tree/master/python)[[Project Page]](https://github.com/hrlblab/Map3D)[[Journal Paper]](https://arxiv.org/pdf/2006.06038.pdf)[[SPIE 2023 Paper]](https://github.com/hrlblab/Map3D)<br />
 
 
 This is the official implementation of Map3D-Registration: An End-to-end Pipeline for 3D Slide-wise Multi-stain Renal Pathology Registration
@@ -9,22 +9,19 @@ This is the official implementation of Map3D-Registration: An End-to-end Pipelin
 ![Overview](https://github.com/hrlblab/Map3D/blob/main/Figure/pipeline.png)<br />
 
 **Journal Paper** <br />
-> [Omni-Seg: A Scale-aware Dynamic Network for Pathological Image Segmentation](https://arxiv.org/pdf/2206.13632v1.pdf) <br />
-> Ruining Deng, Quan Liu, Can Cui, Tianyuan Yao, Jun Long, Zuhayr Asad, R. Michael Womick, Zheyu Zhu, Agnes B. Fogo, Shilin Zhao, Haichun Yang, Yuankai Huo. <br />
-> *(Under review)* <br />
+> [Map3D: Registration Based Multi-Object Tracking
+on 3D Serial Whole Slide Images](https://arxiv.org/pdf/2006.06038.pdf) <br />
+> Ruining Deng, Haichun Yang, Aadarsh Jha, Yuzhe Lu, Peng Chu, Agnes B. Fogo, and  Yuankai Huo. <br />
 
-**MIDL Paper** <br />
-> [Omni-Seg: A Single Dynamic Network for Multi-label Renal Pathology Image Segmentation using Partially Labeled Data](https://openreview.net/pdf?id=v-z4Zxkt9Ex) <br />
-> Ruining Deng, Quan Liu, Can Cui, Zuhayr Asad, Haichun Yang, Yuankai Huo. <br />
-> *MIDL 2022* <br />
 
 **SPIE Paper** <br />
-> [An Accelerated Pipeline for Multi-label Renal Pathology Image Segmentation at the Whole Slide Image Level](https://https://github.com/ddrrnn123/Omni-Seg/)<br />
-> Haoju Leng*, Ruining Deng*, Zuhayr Asad, R. Michael Womick, Haichun Yang, Lipeng Wan, and Yuankai Huo.<br />
+> [An End-to-end Pipeline for 3D Slide-wise Multi-stain Renal
+Pathology Registration](https://github.com/hrlblab/Map3D)<br />
+> Peize Li*, Ruining Deng*, and Yuankai Huo.<br />
 > *(Under review)* <br />
 
 ```diff
-+ We release an accelerated pipeline as a single Docker.
++ We release the registration pipeline as a single Docker.
 ```
 
 ## Abstract
