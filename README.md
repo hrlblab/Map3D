@@ -6,7 +6,7 @@
 This is the official implementation of Map3D-Registration: An End-to-end Pipeline for 3D Slide-wise Multi-stain Renal Pathology Registration
 
 
-![Overview](https://github.com/hrlblab/Map3D/blob/main/Figure/pipeline.pdf)<br />
+![Overview](https://github.com/hrlblab/Map3D/blob/main/Figure/pipeline.png)<br />
 
 **Journal Paper** <br />
 > [Omni-Seg: A Scale-aware Dynamic Network for Pathological Image Segmentation](https://arxiv.org/pdf/2206.13632v1.pdf) <br />
