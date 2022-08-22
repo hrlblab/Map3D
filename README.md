@@ -25,12 +25,16 @@ Pathology Registration](https://github.com/hrlblab/Map3D)<br />
 ```
 
 ## Abstract
-Comprehensive semantic segmentation on renal pathological images is challenging due to the heterogeneous scales of the objects. For example, on a whole slide image (WSI), the cross-sectional areas of glomeruli can be 64 times larger than that of the peritubular capillaries, making it impractical to segment both objects on the same patch, at the same scale. To handle this scaling issue, we propose the Omni-Seg network, a scale-aware dynamic neural network that achieves multi-object (six tissue types) and multi-scale (5$\times$ to 40$\times$ scale) pathological image segmentation via a single neural network.<br /> 
-
+Tissue examination and quantification in a 3D context on serial section whole slide images (WSIs) were labor-
+intensive and time-consuming tasks. Our previous study proposed a novel registration-based method (Map3D)
+to automatically align WSIs to the same physical space, reducing the human efforts of screening serial sections
+from WSIs. However, the registration performance of our Map3D method was only evaluated on single-stain
+WSIs with large-scale kidney tissue samples. In this paper, we provide a Docker for an end-to-end 3D slide-wise
+registration pipeline on needle biopsy serial sections in a multi-stain paradigm. <br /> 
 The contribution of this paper is three-fold: <br />
-(1) a novel scale-aware controller is proposed to generalize the dynamic neural network from single-scale to multi-scale; <br />
-(2) semi-supervised consistency regularization of pseudo-labels is introduced to model the inter-scale correlation of unannotated tissue types into a single end-to-end learning paradigm;<br />
-(3) superior scale-aware generalization is evidenced by directly applying a model trained on human kidney images to mouse kidney images, without retraining. 
+(1) We release a containerized Docker for an end-to-end multi-stain WSI registration; <br />
+(2) We prove that the Map3D pipeline is capable of sectional registration from multi-stain WSI; <br />
+(3) We verify that the Map3D pipeline can also be applied to needle biopsy tissue samples.
 
 ## Quick Start
 #### Get our docker image
