@@ -41,33 +41,26 @@ The contribution of this paper is three-fold: <br />
 #### Get our docker image
 
 ```
-sudo docker pull hrlblab/MAP3D
+sudo docker pull hrlblab/MAP3D-Regis
 ```
-#### Run Omni-Seg
-You can run the following command or change the `input_dir`, then you will have the final segmentation results in `output_dir`. Please refer to "New data" section at [DEVELOP.md](https://github.com/ddrrnn123/Omni-Seg/blob/main/DEVELOP.md) for input data format requirement and data arrangement.
+#### Run Map3D-Regis
+You can run the following commands to run Map3D Registration pipeline. You may change the `input_dir` and the list of indexes, and then you will have the final segmentation results in `output_dir`. Please refer to [DATA.md](https://github.com/ddrrnn123/Omni-Seg/blob/main/DEVELOP.md) for input data format requirement and data arrangement.
 ```
 # you need to specify the input directory. 
 export input_dir=/home/input_dir   
-# make that directory
-sudo mkdir $input_dir
+
 # set output directory
 export output_dir=$input_dir/output
-#run the docker
-sudo nvidia-docker run --shm-size 64G -it --rm -v $input_dir:/INPUTS/ -v $output_dir:/OUTPUTS lengh2/omni_seg 
+
+# run the docker
+sudo nvidia-docker run -it --rm -v $input_dir:/INPUTS -v $output_dir:/OUTPUTS hrlblab/MAP3D
+
+# Enter a comma seperated list of indexes to indicate which image should be used as the middle section image in each case
+2,3,5
 ```
-<!---
-## Google Colab (need modify)
--->
+## Run Pipeline Locally without Docker
+Please refer to [Develop.md](https://github.com/ddrrnn123/Omni-Seg/blob/main/INSTALL.md) for instructions of running Map3D Registration pipeline locally.
 
-
-## Installation
-Please refer to [INSTALL.md](https://github.com/ddrrnn123/Omni-Seg/blob/main/INSTALL.md) for installation instructions of the segmentation.
-
-## Model
-Pretrained model can be found [here](https://github.com/ddrrnn123/Omni-Seg/tree/main/Omni_seg_pipeline_gpu/snapshots_2D)
-
-## Data
-The training data can be found [here](http://haeckel.case.edu/data/KI_data/)
 
 ## Omni-Seg - Region Image Demo
 Omni-Seg can easily be run on a single image.
@@ -161,9 +154,6 @@ If set up correctly, the output should look like
 
 
 
-
-## Develop
-Please refer to [DEVELOP.md](https://github.com/ddrrnn123/Omni-Seg/blob/main/DEVELOP.md) to train Omni-Seg on a new dataset, design a new architecture based on Omni-Seg.
 
 ## Previous Versions
 #### Google Colab
