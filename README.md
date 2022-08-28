@@ -53,7 +53,7 @@ export input_dir=/home/input_dir
 export output_dir=$input_dir/output
 
 # run the docker
-sudo nvidia-docker run -it --rm -v $input_dir:/INPUTS -v $output_dir:/OUTPUTS hrlblab/MAP3D
+sudo nvidia-docker run -it --rm -v $input_dir:/INPUTS -v $output_dir:/OUTPUTS hrlblab/MAP3D-Regis
 
 # Enter a comma seperated list of indexes to indicate which image should be used as the middle section image in each case
 2,3,5
@@ -154,19 +154,14 @@ If set up correctly, the output should look like
 
 
 
-
-## Previous Versions
-#### Google Colab
-A Google Colab version of the Oracle pipeline can be found [here](https://drive.google.com/drive/folders/1vKeDMYI3Xcm6s9yAy5stBhqKWjOFvUoy?usp=sharing). The code demonstrates the patch-wise segmentation of the Oracle pipeline. 
-
 ## Citation
 ```
-@inproceedings{
-deng2022omniseg,
-title={Omni-Seg: A Single Dynamic Network for Multi-label Renal Pathology Image Segmentation using Partially Labeled Data},
-author={Ruining Deng and Quan Liu and Can Cui and Zuhayr Asad and Haichun Yang and Yuankai Huo},
-booktitle={Medical Imaging with Deep Learning},
-year={2022},
-url={https://openreview.net/forum?id=v-z4Zxkt9Ex}
+@article{deng2021map3d,
+title={Map3D: registration based multi-object tracking on 3D serial whole slide images},
+author={Ruining Deng, Haichun Yang, Aadarsh Jha, Yuzhe Lu, Chu Peng, Agnes B. Fogo, and Yuankai Huo},
+journal={IEEE Transactions on Medical Imaging},
+year={2021},
+publisher={IEEE},
+url={https://arxiv.org/pdf/2006.06038.pdf}
 }
 ```
