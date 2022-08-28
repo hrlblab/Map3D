@@ -62,7 +62,7 @@ sudo nvidia-docker run -it --rm -v $input_dir:/INPUTS -v $output_dir:/OUTPUTS hr
 Please refer to [Develop.md](https://github.com/hrlblab/Map3D/blob/main/DEVELOP.md) for instructions of running Map3D Registration pipeline locally.
 
 
-## Omni-Seg - Region Image Demo
+## Map3D Registration Demo
 Omni-Seg can easily be run on a single image.
 
 Below is an example input of region image.
