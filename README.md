@@ -63,95 +63,39 @@ Please refer to [Develop.md](https://github.com/hrlblab/Map3D/blob/main/DEVELOP.
 
 
 ## Map3D Registration Demo
-Omni-Seg can easily be run on a single image.
 
-Below is an example input of region image.
+Below is an example input of serial section WSIs, and it is named "no1" in the demo. We also have "no2" and "no3" and they will be processed in parallel.
 
-<img src='GithubFigure/region_input.png' align="center" height="230px"> 
+<img src='Figure/before.png' align="center" height="230px"> 
 
-- The entire pipeline is at the [Omni_seg_pipeline_gpu](Omni_seg_pipeline_gpu/) folder
-- Create three empty folders named as "40X", "10X", and "5X" under [Omni_seg_pipeline_gpu/svs_input](Omni_seg_pipeline_gpu/svs_input) folder. Put 40X, 10X and 5X PNG files of the region image into these folders correspondingly. Each folder must contain only one file when running.
-- Create three empty folders in the [Omni_seg_pipeline_gpu](Omni_seg_pipeline_gpu/) folder (before running, these three folders must be empty to remove any previous data): 
-  1. "clinical_patches" folder
-  2. "segmentation_merge" folder
-  3. "final_merge" folder
+- The entire pipeline is at the [Map3D-pipeline](Map3D-pipeline/)folder
+- Create an empty folder in the [Map3D-pipeline](Map3D-pipeline/) folder and name it as "input_png". Put folders that contain 10X magnification PNG files into "input_png" folder. For guidance and instruction for input data format requirement and data arrangement, please refer to [DATA.md](https://github.com/hrlblab/Map3D/blob/main/DATA.md).
 - Run the python scripts as following orders:
-  1. [1024_Step1_GridPatch_overlap_padding.py](Omni_seg_pipeline_gpu/1024_Step1_GridPatch_overlap_padding.py)
+  1. [Step1_superglue.py](https://github.com/hrlblab/Map3D/blob/main/Map3D-pipeline/Step1_superglue.py)
   ```
-  python 1024_Step1_GridPatch_overlap_padding.py
+  python Step1_superglue.py
   ```
-  2. [1024_Step1.5_MOTSDataset_2D_Patch_normal_save_csv.py](Omni_seg_pipeline_gpu/1024_Step1.5_MOTSDataset_2D_Patch_normal_save_csv.py)
+  2. [Step2_ApplySGToMiddle.py](https://github.com/hrlblab/Map3D/blob/main/Map3D-pipeline/Step2_ApplySGToMiddle.py)
   ```
-  python 1024_Step1.5_MOTSDataset_2D_Patch_normal_save_csv.py
+  python Step2_ApplySGToMiddle.py --middle_images "2,3,2"
   ```
-  3. [Random_Step2_Testing_OmniSeg_label_overlap_64_padding.py](Omni_seg_pipeline_gpu/Random_Step2_Testing_OmniSeg_label_overlap_64_padding.py)
+  3. [Step3_matrix_npytomat.py](https://github.com/hrlblab/Map3D/blob/main/Map3D-pipeline/Step3_matrix_npytomat.py)
   ```
-  python Random_Step2_Testing_OmniSeg_label_overlap_64_padding.py --reload_path 'snapshots_2D/fold1_with_white_UNet2D_ns_normalwhole_1106/MOTS_DynConv_fold1_with_white_UNet2D_ns_normalwhole_1106_e89.pth'
+  python Step3_matrix_npytomat.py
   ```
-  4. [step3.py](Omni_seg_pipeline_gpu/step3.py)
+  4. [Step4_SuperGlue+ANTs.py](https://github.com/hrlblab/Map3D/blob/main/Map3D-pipeline/Step4_SuperGlue%2BANTs.py)
   ```
-  python step3.py
+  python Step4_SuperGlue+ANTs.py --middle_images "2,3,2"
   ```
-  5. [step4.py](Omni_seg_pipeline_gpu/step4.py)
+  5. [Step5_BigRecon_moveAllslicesToMiddle.py](https://github.com/hrlblab/Map3D/blob/main/Map3D-pipeline/Step5_BigRecon_moveAllslicesToMiddle.py)
   ```
-  python step4.py
+  python Step5_BigRecon_moveAllslicesToMiddle.py --middle_images "2,3,2"
   ```
-- The output will be stored at "final_merge" folder.
+- The output will be stored at "output" folder under [Map3D-pipeline](Map3D-pipeline/) directory.
 
-If set up correctly, the output should look like
+If set up correctly, the output for "no1" should look like
 
-<img src='GithubFigure/region_output.png' align="center" height="230px"> 
-
-## Omni-Seg - Whole Slide Image Demo
-CircleNet can also be run on Whole Slide Images in *.svs file format.
-
-Please download the following file:
-- [Human Kidney WSI (3d90_PAS.svs)](https://vanderbilt.box.com/s/sskcgbvz15bcfuh9sra96u1dy1hzqm6o)
-
-We need to annotate and convert data into *.png file format first.
-
-- Annotate the WSI rectangularly to remove most of the empty background. Recommend to use ImageScope and save the .xml file for annotation information. 
-- Convert the svs file into PNG files and saved into 40X, 10X and 5X magnifications. Please refer to [Omni_seg_pipeline_gpu/svs_input/svs_to_png.py](Omni_seg_pipeline_gpu/svs_input/svs_to_png.py) for an example to convert svs format to PNG format and resize to different magnifications.
-- Create three empty folders named as "40X", "10X", and "5X" under [Omni_seg_pipeline_gpu/svs_input](Omni_seg_pipeline_gpu/svs_input) folder. Put 40X, 10X and 5X PNG files into these folders correspondingly. Each folder must contain only one file when running. 
-
-After annotation, the inputs should be like the following image with three different magnifications
-
-<img src='GithubFigure/WSI_input.png' align="center" height="350px"> 
-
-Please create three empty folders in the [Omni_seg_pipeline_gpu](Omni_seg_pipeline_gpu/) folder (before running, these three folders must be empty to remove any previous data): 
-  1. "clinical_patches" folder
-  2. "segmentation_merge" folder
-  3. "final_merge" folder
-  
-To run the Omni-Seg pipeline, please go to [Omni_seg_pipeline_gpu](Omni_seg_pipeline_gpu/) folder and run the python scipts as following orders:
-  1. [1024_Step1_GridPatch_overlap_padding.py](Omni_seg_pipeline_gpu/1024_Step1_GridPatch_overlap_padding.py)
-  ```
-  python 1024_Step1_GridPatch_overlap_padding.py
-  ```
-  2. [1024_Step1.5_MOTSDataset_2D_Patch_normal_save_csv.py](Omni_seg_pipeline_gpu/1024_Step1.5_MOTSDataset_2D_Patch_normal_save_csv.py)
-  ```
-  python 1024_Step1.5_MOTSDataset_2D_Patch_normal_save_csv.py
-  ```
-  3. [Random_Step2_Testing_OmniSeg_label_overlap_64_padding.py](Omni_seg_pipeline_gpu/Random_Step2_Testing_OmniSeg_label_overlap_64_padding.py)
-  ```
-  python Random_Step2_Testing_OmniSeg_label_overlap_64_padding.py --reload_path 'snapshots_2D/fold1_with_white_UNet2D_ns_normalwhole_1106/MOTS_DynConv_fold1_with_white_UNet2D_ns_normalwhole_1106_e89.pth'
-  ```
-  4. [step3.py](Omni_seg_pipeline_gpu/step3.py)
-  ```
-  python step3.py
-  ```
-  5. [step4.py](Omni_seg_pipeline_gpu/step4.py)
-  ```
-  python step4.py
-  ```
-
-The output will be stored at "final_merge" folder.
-
-If set up correctly, the output should look like
-
-<img src='GithubFigure/WSI_output.png' align="center" height="350px"> 
-
-
+<img src='Figure/after.png' align="center" height="230px"> 
 
 
 ## Citation

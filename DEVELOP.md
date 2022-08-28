@@ -29,7 +29,7 @@ We used PyTorch 1.9.1 on [Ubuntu 22.04 LTS](https://releases.ubuntu.com/22.04/) 
 
 ## Run Map3D Registration pipeline locally without docker
 - The entire pipeline is at the [Map3D-pipeline](Map3D-pipeline/) folder
-- Create an empty folder in the [Map3D-pipeline](Map3D-pipeline/) folder and name it as "input_png". Put folders that contain PNG files into "input_png" folder. For guidance and instruction for input data format requirement and data arrangement, please refer to [DATA.md](https://github.com/hrlblab/Map3D/blob/main/DATA.md).
+- Create an empty folder in the [Map3D-pipeline](Map3D-pipeline/) folder and name it as "input_png". Put folders that contain 10X magnification PNG files into "input_png" folder. For guidance and instruction for input data format requirement and data arrangement, please refer to [DATA.md](https://github.com/hrlblab/Map3D/blob/main/DATA.md).
 - Run python scripts in [Map3D-pipeline](Map3D-pipeline/) folder as following orders: 
   1. [Step1_superglue.py](https://github.com/hrlblab/Map3D/blob/main/Map3D-pipeline/Step1_superglue.py)
   2. [Step2_ApplySGToMiddle.py](https://github.com/hrlblab/Map3D/blob/main/Map3D-pipeline/Step2_ApplySGToMiddle.py)
