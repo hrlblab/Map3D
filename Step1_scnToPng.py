@@ -315,10 +315,11 @@ if __name__ == "__main__":
     start_time = time.time()
 
     if Leeds:
-        data_dir = '/Data3/Peize/Leeds-repo/Transplant Renal Biopsies - Set1'
+        data_dir = '/Home/DeskTop/Peize/section16/no1'
         output_dir = '/Data3/Peize/Leeds_png_pre-selection'
 
         sections = glob.glob(os.path.join(data_dir, '*'))
+        print(sections)
         sections.sort()
 
 

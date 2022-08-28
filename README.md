@@ -31,6 +31,7 @@ to automatically align WSIs to the same physical space, reducing the human effor
 from WSIs. However, the registration performance of our Map3D method was only evaluated on single-stain
 WSIs with large-scale kidney tissue samples. In this paper, we provide a Docker for an end-to-end 3D slide-wise
 registration pipeline on needle biopsy serial sections in a multi-stain paradigm. <br /> 
+
 The contribution of this paper is three-fold: <br />
 (1) We release a containerized Docker for an end-to-end multi-stain WSI registration; <br />
 (2) We prove that the Map3D pipeline is capable of sectional registration from multi-stain WSI; <br />
@@ -40,7 +41,7 @@ The contribution of this paper is three-fold: <br />
 #### Get our docker image
 
 ```
-sudo docker pull lengh2/omni_seg
+sudo docker pull hrlblab/MAP3D
 ```
 #### Run Omni-Seg
 You can run the following command or change the `input_dir`, then you will have the final segmentation results in `output_dir`. Please refer to "New data" section at [DEVELOP.md](https://github.com/ddrrnn123/Omni-Seg/blob/main/DEVELOP.md) for input data format requirement and data arrangement.
