@@ -77,7 +77,7 @@ Below is an example input of serial section WSIs, and it is named "no1" in the d
   ```
   2. [Step2_ApplySGToMiddle.py](https://github.com/hrlblab/Map3D/blob/main/Map3D-pipeline/Step2_ApplySGToMiddle.py)
   ```
-  python Step2_ApplySGToMiddle.py --middle_images "2,3,2"
+  python Step2_ApplySGToMiddle.py --middle_images 2,3,2
   ```
   3. [Step3_matrix_npytomat.py](https://github.com/hrlblab/Map3D/blob/main/Map3D-pipeline/Step3_matrix_npytomat.py)
   ```
@@ -85,11 +85,11 @@ Below is an example input of serial section WSIs, and it is named "no1" in the d
   ```
   4. [Step4_SuperGlue+ANTs.py](https://github.com/hrlblab/Map3D/blob/main/Map3D-pipeline/Step4_SuperGlue%2BANTs.py)
   ```
-  python Step4_SuperGlue+ANTs.py --middle_images "2,3,2"
+  python Step4_SuperGlue+ANTs.py --middle_images 2,3,2
   ```
   5. [Step5_BigRecon_moveAllslicesToMiddle.py](https://github.com/hrlblab/Map3D/blob/main/Map3D-pipeline/Step5_BigRecon_moveAllslicesToMiddle.py)
   ```
-  python Step5_BigRecon_moveAllslicesToMiddle.py --middle_images "2,3,2"
+  python Step5_BigRecon_moveAllslicesToMiddle.py --middle_images 2,3,2
   ```
 - The output will be stored at "output" folder under [Map3D-pipeline](Map3D-pipeline/) directory.
 
