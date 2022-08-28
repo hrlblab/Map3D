@@ -44,7 +44,7 @@ The contribution of this paper is three-fold: <br />
 sudo docker pull hrlblab/MAP3D-Regis
 ```
 #### Run Map3D-Regis
-You can run the following commands to run Map3D Registration pipeline. You may change the `input_dir` and the list of indexes, and then you will have the final segmentation results in `output_dir`. Please refer to [DATA.md](https://github.com/ddrrnn123/Omni-Seg/blob/main/DEVELOP.md) for input data format requirement and data arrangement.
+You can run the following commands to run Map3D Registration pipeline. You may change the `input_dir` and the list of indexes, and then you will have the final segmentation results in `output_dir`. Please refer to [DATA.md](https://github.com/hrlblab/Map3D/blob/main/DATA.md) for input data format requirement and data arrangement.
 ```
 # you need to specify the input directory. 
 export input_dir=/home/input_dir   
@@ -59,7 +59,7 @@ sudo nvidia-docker run -it --rm -v $input_dir:/INPUTS -v $output_dir:/OUTPUTS hr
 2,3,5
 ```
 ## Run Pipeline Locally without Docker
-Please refer to [Develop.md](https://github.com/ddrrnn123/Omni-Seg/blob/main/INSTALL.md) for instructions of running Map3D Registration pipeline locally.
+Please refer to [Develop.md](https://github.com/hrlblab/Map3D/blob/main/DEVELOP.md) for instructions of running Map3D Registration pipeline locally.
 
 
 ## Omni-Seg - Region Image Demo
