@@ -80,10 +80,11 @@ def affine_forward(slice, middle_image, now_idx, now_middle_idx, images_folder, 
 
 if __name__ == "__main__":
 
-    folder = 'input_png'
+    png_input = 'input_png'
+    folder = 'data'
 
     parser = argparse.ArgumentParser(description="Map3D Registration")
-    parser.add_argument("--middle_images", type=str, default='1')
+    parser.add_argument("--middle_images", type=str, default='3,3')
     args = parser.parse_args()
     middle_image_list = args.middle_images.strip().split(',')
     middle_idx = [int(x) for x in middle_image_list]
@@ -94,15 +95,15 @@ if __name__ == "__main__":
     cases = glob.glob(os.path.join(folder, '*'))
     cases.sort(key=natural_keys)
 
-    print("Step 2 is running.")
+    print("Step 3 is running.")
 
     for ci in range(len(cases)):
-    #for ci in range(0,1):
+        # for ci in range(0,1):
         print(cases[ci])
         case = cases[ci]
         now_case = os.path.basename(case)
 
-        images_folder = os.path.join(case, '10X')
+        images_folder = os.path.join(png_input, now_case)
         affine_folder = os.path.join(case, 'sg_affine')
         output_folder = os.path.join(case, 'affine_10X')
 
@@ -110,6 +111,7 @@ if __name__ == "__main__":
             os.makedirs(output_folder)
 
         images = glob.glob(os.path.join(images_folder, '*'))
+        print(len(images))
 
         images.sort(key=natural_keys)
         now_middle_idx = middle_idx[ci]
@@ -117,17 +119,17 @@ if __name__ == "__main__":
         middle_image = plt.imread(images[now_middle_idx - 1])
         print(len(images))
 
-        for ki in range(1,len(images)+1):
-            slice = images[ki-1]
+        for ki in range(1, len(images) + 1):
+            slice = images[ki - 1]
             now_slice = os.path.basename(slice)
-            now_idx = int(now_slice.split('-')[0].replace('.png',''))
+            now_idx = int(now_slice.split('-')[0].replace('.png', ''))
 
             if ki < now_middle_idx:
-                print('%s to %s' % (ki, now_middle_idx) )
+                print('%s to %s' % (ki, now_middle_idx))
                 affine_backward(slice, middle_image, ki, now_middle_idx, images_folder, affine_folder, output_folder)
             elif ki > now_middle_idx:
                 print('%s to %s' % (ki, now_middle_idx))
-                affine_forward(slice, middle_image,ki, now_middle_idx, images_folder, affine_folder, output_folder)
+                affine_forward(slice, middle_image, ki, now_middle_idx, images_folder, affine_folder, output_folder)
             else:
                 now_image = middle_image
                 new_root = slice.replace(images_folder, output_folder)

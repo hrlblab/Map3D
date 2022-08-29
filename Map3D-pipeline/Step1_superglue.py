@@ -906,13 +906,15 @@ def natural_keys(text):
 if __name__ == "__main__":
 
     folder = 'input_png'
+    output = 'data'
     cases = glob.glob(os.path.join(folder, '*'))
     cases.sort()
-    print("Step 1 is running.")
+    print("Step 2 is running.")
 
     for ki in range(len(cases)):
         now_case = os.path.basename(cases[ki])
-        slices = glob.glob(os.path.join(cases[ki], '10X', '*'))
+        # slices = glob.glob(os.path.join(cases[ki], '10X', '*'))
+        slices = glob.glob(os.path.join(cases[ki], '*'))
         slices.sort(key=natural_keys)
 
         for si in range(1, len(slices)):
@@ -920,5 +922,5 @@ if __name__ == "__main__":
             fix = slices[si - 1]
             print('%s to %s is %s to %s' % (si + 1, si, moving, fix))
 
-            overlay_dir = os.path.join(folder, '%s/sg_affine/%d-to-%d/' % (now_case, si + 1, si))
+            overlay_dir = os.path.join(output, '%s/sg_affine/%d-to-%d/' % (now_case, si + 1, si))
             sg_affine(moving, fix, overlay_dir)

@@ -29,14 +29,14 @@ def natural_keys(text):
 
 if __name__ == "__main__":
 
-    folder = 'input_png'
+    png_input = 'input_png'
+    folder = 'data'
     output_dir = 'output'
-    #output_dir = '/home/lengh2/Desktop/Peize/result'
     with_sg = True
 
     parser = argparse.ArgumentParser(description="Map3D Registration")
     parser.add_argument("--middle_images", type=str, default='1')
-    #args,unknown = parser.parse_known_args()
+    # args,unknown = parser.parse_known_args()
     args = parser.parse_args()
     middle_image_list = args.middle_images.strip().split(',')
     middle_idx_list = [int(x) for x in middle_image_list]
@@ -44,16 +44,14 @@ if __name__ == "__main__":
     cases = glob.glob(os.path.join(folder, '*'))
     cases.sort(key=natural_keys)
 
-    #for ci in range(0,1):
-    print("Step 5 is running.")
+    # for ci in range(0,1):
     for ci in range(0, len(cases)):
 
         case = cases[ci]
         now_case = os.path.basename(case)
-        output_case=os.path.join(output_dir,now_case)
+        output_case = os.path.join(output_dir, now_case)
 
-
-        image_input_dir = os.path.join(case, '10X')
+        image_input_dir = os.path.join(png_input, now_case)
         if with_sg:
             ANTs_root_dir = os.path.join(case, 'ANTs_affine')
             output_folder = os.path.join(output_case, 'final_image_10X')
@@ -68,7 +66,7 @@ if __name__ == "__main__":
 
         roi_list = []
         for mi in range(len(slice_files)):
-            roi_list.append(int(os.path.basename(slice_files[mi]).split('-')[0].replace('.png','')))
+            roi_list.append(int(os.path.basename(slice_files[mi]).split('-')[0].replace('.png', '')))
         print(roi_list)
 
         image_range_min = roi_list[0]
@@ -93,7 +91,7 @@ if __name__ == "__main__":
 
             moving_index = ki + 1
             fixed_index = ki
-            #print('Now combining the mtx %d-to-%d' % (moving_index, fixed_index))
+            # print('Now combining the mtx %d-to-%d' % (moving_index, fixed_index))
 
             registration_dir = os.path.join(ANTs_root_dir, '%d-to-%d' % (moving_index, fixed_index))
             affine_mtx_file = os.path.join(registration_dir, 'step2_run_ants_reg', 'output0GenericAffine.mat')
@@ -103,18 +101,17 @@ if __name__ == "__main__":
             print(copy_mtx)
             os.system("cp %s %s" % (affine_mtx_file, copy_mtx))
 
-
         'affine in cv2'
         middle_image = plt.imread(images[middle_idx - 1])
 
         for ki in range(len(images)):
             slice = images[ki]
             now_slice = os.path.basename(slice)
-            now_idx = int(now_slice.split('-')[0].replace('.png',''))
-            now_idx=ki+1
+            now_idx = int(now_slice.split('-')[0].replace('.png', ''))
+            now_idx = ki + 1
             moving_idx = now_idx + 1
             fixed_idx = now_idx
-            img_highres = plt.imread(slice)[:,:,:3]
+            img_highres = plt.imread(slice)[:, :, :3]
 
             print('now is %d to %d' % (moving_idx, fixed_idx))
 
@@ -122,7 +119,7 @@ if __name__ == "__main__":
                 M_new = np.zeros((3, 3))
                 M_new[2, 2] = 1.
                 for ri in range(now_idx, middle_idx):
-                    affine_root = os.path.join(output_mat_folder,'%d.mat' % (ri))
+                    affine_root = os.path.join(output_mat_folder, '%d.mat' % (ri))
                     print(affine_root)
                     m = sitk.ReadTransform(affine_root)
                     FixP = m.GetFixedParameters()
@@ -136,8 +133,8 @@ if __name__ == "__main__":
                     M_inv[0, 2] = M_vec[4] - (FixP[0] * M_inv[0, 0] + FixP[1] * M_inv[0, 1] - FixP[0])
                     M_inv[1, 2] = M_vec[5] - (FixP[0] * M_inv[1, 0] + FixP[1] * M_inv[1, 1] - FixP[1])
 
-                    M1 = np.zeros((3,3))
-                    M1[2,2] = 1.
+                    M1 = np.zeros((3, 3))
+                    M1[2, 2] = 1.
                     M1[:2, :] = cv2.invertAffineTransform(M_inv)
 
                     if ri == now_idx:
@@ -145,10 +142,11 @@ if __name__ == "__main__":
                     else:
                         M_new = M_new.dot(M1)
 
-                now_image = plt.imread(images[ki])[:,:,:3]
+                now_image = plt.imread(images[ki])[:, :, :3]
 
                 affine_matrix_inv = cv2.invertAffineTransform(M_new[:2, :])
-                img1_affine = cv2.warpAffine(now_image, affine_matrix_inv[:2,:], (middle_image.shape[1], middle_image.shape[0]))
+                img1_affine = cv2.warpAffine(now_image, affine_matrix_inv[:2, :],
+                                             (middle_image.shape[1], middle_image.shape[0]))
                 new_root = images[ki].replace(image_input_dir, output_folder)
                 plt.imsave(new_root, img1_affine)
 
@@ -186,5 +184,5 @@ if __name__ == "__main__":
                 new_root = images[ki].replace(image_input_dir, output_folder)
                 plt.imsave(new_root, img1_affine)
             else:
-                new_root = images[middle_idx  - 1].replace(image_input_dir, output_folder)
+                new_root = images[middle_idx - 1].replace(image_input_dir, output_folder)
                 plt.imsave(new_root, middle_image)

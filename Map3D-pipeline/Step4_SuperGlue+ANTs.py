@@ -57,26 +57,25 @@ def mask_to_box(fixed_mask_jpg):
 
 if __name__ == "__main__":
 
-    folder = os.path.join(os. getcwd(), 'input_png')
+    png_input = 'input_png'
+    folder = os.path.join(os.getcwd(), 'data')
     with_sg = True
 
     parser = argparse.ArgumentParser(description="Map3D Registration")
-    parser.add_argument("--middle_images", type=str, default='1')
+    parser.add_argument("--middle_images", type=str, default='2,2')
     args = parser.parse_args()
     middle_image_list = args.middle_images.strip().split(',')
-    middle_idx_list= [int(x) for x in middle_image_list]
+    middle_idx_list = [int(x) for x in middle_image_list]
 
     cases = glob.glob(os.path.join(folder, '*'))
     cases.sort(key=natural_keys)
 
-    print("Step 4 is running.")
-
-    for ci in range(0,len(cases)):
-    #for ci in range(len(cases)):
+    for ci in range(0, len(cases)):
+        # for ci in range(len(cases)):
         case = cases[ci]
         now_case = os.path.basename(case)
 
-        image_input_dir = os.path.join(case, '10X')
+        image_input_dir = os.path.join(png_input, now_case)
         if with_sg:
             image_output_root_dir = os.path.join(case, 'ANTs_affine')
         else:
@@ -86,7 +85,6 @@ if __name__ == "__main__":
         # image_mask_dir = '/Data/fromHaichun/tracking_pairwise/mask_all
         # image_output_root_dir = '/Data/fromHaichun/major_review/registration_all_superglue'
 
-
         overall_results_dir = os.path.join(image_output_root_dir, 'all_results')
 
         slice_files = glob.glob(os.path.join(image_input_dir, '*'))
@@ -95,7 +93,7 @@ if __name__ == "__main__":
 
         roi_list = []
         for mi in range(len(slice_files)):
-            roi_list.append(int(os.path.basename(slice_files[mi]).split('-')[0].replace('.png','')))
+            roi_list.append(int(os.path.basename(slice_files[mi]).split('-')[0].replace('.png', '')))
         print(roi_list)
 
         image_range_min = roi_list[0]
@@ -110,7 +108,7 @@ if __name__ == "__main__":
         overall_results_sub_dir = overall_results_dir
 
         for i in range(1, len(slice_files)):
-        # for i in range(17, 18):
+            # for i in range(17, 18):
 
             moving_roi_curr = i + 1
             fixed_roi_curr = i
