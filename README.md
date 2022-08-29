@@ -1,6 +1,6 @@
 # Map3D-Registration: An End-to-end Pipeline for 3D Slide-wise Multi-stain Renal Pathology Registration
 
-### [[Accelerated Pipeline Docker]](https://github.com/MASILab/SLANTbrainSeg/tree/master/python)[[Project Page]](https://github.com/hrlblab/Map3D)[[Journal Paper]](https://arxiv.org/pdf/2006.06038.pdf)[[SPIE 2023 Paper]](https://github.com/hrlblab/Map3D)<br />
+### [[Accelerated Pipeline Docker]](https://github.com/MASILab/SLANTbrainSeg/tree/master/python)[[Project Page]](https://github.com/hrlblab/Map3D)[[Journal Paper]](https://arxiv.org/pdf/2006.06038.pdf)[[SPIE 2022 Paper]](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12039/120390F/Dense-multi-object-3D-glomerular-reconstruction-and-quantification-on-2D/10.1117/12.2611957.full?SSO=1)[[SPIE 2023 Paper]](https://github.com/hrlblab/Map3D)<br />
 
 
 This is the official implementation of Map3D-Registration: An End-to-end Pipeline for 3D Slide-wise Multi-stain Renal Pathology Registration
@@ -13,8 +13,12 @@ This is the official implementation of Map3D-Registration: An End-to-end Pipelin
 on 3D Serial Whole Slide Images](https://arxiv.org/pdf/2006.06038.pdf) <br />
 > Ruining Deng, Haichun Yang, Aadarsh Jha, Yuzhe Lu, Peng Chu, Agnes B. Fogo, and  Yuankai Huo. <br />
 
+**SPIE 2022 Paper** <br />
+> [Dense multi-object 3D glomerular reconstruction and quantification on 2D serial section whole slide images](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12039/120390F/Dense-multi-object-3D-glomerular-reconstruction-and-quantification-on-2D/10.1117/12.2611957.full?SSO=1)<br />
+>Ruining Deng, Haichun Yang, Zuhayr Asad, Zheyu Zhu, Shiru Wang, Lee E. Wheless, Agnes B. Fogo, Yuankai Huo.<br />
 
-**SPIE Paper** <br />
+
+**SPIE 2023 Paper** <br />
 > [An End-to-end Pipeline for 3D Slide-wise Multi-stain Renal
 Pathology Registration](https://github.com/hrlblab/Map3D)<br />
 > Peize Li*, Ruining Deng*, and Yuankai Huo.<br />
