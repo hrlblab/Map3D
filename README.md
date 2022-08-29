@@ -8,7 +8,7 @@ This is the official implementation of Map3D-Registration: An End-to-end Pipelin
 
 ![Overview](https://github.com/hrlblab/Map3D/blob/main/Figure/pipeline.png)<br />
 
-**Journal Paper** <br />
+**IEEE Transaction on Medical Imaging Paper** <br />
 > [Map3D: Registration Based Multi-Object Tracking
 on 3D Serial Whole Slide Images](https://arxiv.org/pdf/2006.06038.pdf) <br />
 > Ruining Deng, Haichun Yang, Aadarsh Jha, Yuzhe Lu, Peng Chu, Agnes B. Fogo, and  Yuankai Huo. <br />
