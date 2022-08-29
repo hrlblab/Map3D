@@ -1,6 +1,6 @@
 # Map3D-Registration: An End-to-end Pipeline for 3D Slide-wise Multi-stain Renal Pathology Registration
 
-### [[Accelerated Pipeline Docker]](https://github.com/MASILab/SLANTbrainSeg/tree/master/python)[[Project Page]](https://github.com/hrlblab/Map3D)[[Journal Paper]](https://arxiv.org/pdf/2006.06038.pdf)[[SPIE 2022 Paper]](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12039/120390F/Dense-multi-object-3D-glomerular-reconstruction-and-quantification-on-2D/10.1117/12.2611957.full?SSO=1)[[SPIE 2023 Paper]](https://github.com/hrlblab/Map3D)<br />
+### [[Accelerated Pipeline Docker]](https://github.com/MASILab/SLANTbrainSeg/tree/master/python)[[Project Page]](https://github.com/hrlblab/Map3D)[[IEEE TMI Paper]](https://arxiv.org/pdf/2006.06038.pdf)[[SPIE 2022 Paper]](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12039/120390F/Dense-multi-object-3D-glomerular-reconstruction-and-quantification-on-2D/10.1117/12.2611957.full?SSO=1)[[SPIE 2023 Paper]](https://github.com/hrlblab/Map3D)<br />
 
 
 This is the official implementation of Map3D-Registration: An End-to-end Pipeline for 3D Slide-wise Multi-stain Renal Pathology Registration
