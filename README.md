@@ -68,6 +68,8 @@ Please refer to [Develop.md](https://github.com/hrlblab/Map3D/blob/main/DEVELOP.
 
 ## Map3D Registration Demo
 
+![Glomerular quantification](https://github.com/hrlblab/Map3D/blob/main/Figure/Needle_figure.png)<br />
+
 Below is an example input of serial section WSIs, and it is named "no1" in the demo. We also have "no2" and "no3" and they will be processed in parallel.
 
 <img src='Figure/before.png' align="center" height="230px"> 
