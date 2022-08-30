@@ -72,7 +72,7 @@ An example dataset of needle biopsy tissue samples for the pipeline can be found
 ## Map3D Registration Demo
 <img src="https://github.com/hrlblab/Map3D/blob/main/Figure/Needle_figure.png" height="700">
 
-Below is an example input of serial section WSIs, and it is named "no1" in the demo. We also have "no2" and "no3" and they will be processed in parallel.
+Below is an example input of serial section WSIs of needle biopsy tissue samples. These images are contained in our demo dataset, which can be found in the "Data" Section above.
 
 <img src='Figure/before.png' align="center" height="230px"> 
 
