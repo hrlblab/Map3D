@@ -47,7 +47,7 @@ The contribution of this paper is three-fold: <br />
 ```
 sudo docker pull peize/map3d
 ```
-#### Run Map3D-Regis
+#### Run Map3D Pipeline
 You can run the following commands to run Map3D Registration pipeline. You may change the `input_dir` and the list of indexes, and then you will have the final segmentation results in `output_dir`. Please refer to [DATA.md](https://github.com/hrlblab/Map3D/blob/main/DATA.md) for input data format requirement and data arrangement.
 ```
 # you need to specify the input directory. 
