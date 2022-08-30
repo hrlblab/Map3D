@@ -66,7 +66,7 @@ sudo nvidia-docker run -it --rm -v $input_dir:/INPUTS -v $output_dir:/OUTPUTS pe
 Please refer to [Develop.md](https://github.com/hrlblab/Map3D/blob/main/DEVELOP.md) for instructions of running Map3D Registration pipeline locally.
 
 ## Data
-An example dataset of needle biopsy tissue samples for the pipeline can be found [here](https://vanderbilt.box.com/s/3lrrwxrk9wpw7gkgupfw1pzcgvuyv8uz). This dataset contains two cases and each one includes five .PNG files with 10X magnification.
+An example dataset of needle biopsy tissue samples for the pipeline can be found [here](https://vanderbilt.box.com/s/3lrrwxrk9wpw7gkgupfw1pzcgvuyv8uz). This dataset contains two different cases and each one includes five .PNG files with 10X magnification.
 
 
 ## Map3D Registration Demo
