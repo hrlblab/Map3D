@@ -1,6 +1,6 @@
 # Map3D-Registration: An End-to-end Pipeline for 3D Slide-wise Multi-stain Renal Pathology Registration
 
-### [[Accelerated Pipeline Docker]](https://github.com/MASILab/SLANTbrainSeg/tree/master/python)[[Project Page]](https://github.com/hrlblab/Map3D)[[IEEE TMI Paper]](https://arxiv.org/pdf/2006.06038.pdf)[[SPIE 2022 Paper]](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12039/120390F/Dense-multi-object-3D-glomerular-reconstruction-and-quantification-on-2D/10.1117/12.2611957.full?SSO=1)[[SPIE 2023 Paper]](https://github.com/hrlblab/Map3D)<br />
+### [[Accelerated Pipeline Docker]](https://hub.docker.com/r/peize/map3d)[[Project Page]](https://github.com/hrlblab/Map3D)[[IEEE TMI Paper]](https://arxiv.org/pdf/2006.06038.pdf)[[SPIE 2022 Paper]](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12039/120390F/Dense-multi-object-3D-glomerular-reconstruction-and-quantification-on-2D/10.1117/12.2611957.full?SSO=1)[[SPIE 2023 Paper]](https://github.com/hrlblab/Map3D)<br />
 
 
 This is the official implementation of Map3D-Registration: An End-to-end Pipeline for 3D Slide-wise Multi-stain Renal Pathology Registration
@@ -45,7 +45,7 @@ The contribution of this paper is three-fold: <br />
 #### Get our docker image
 
 ```
-sudo docker pull hrlblab/MAP3D-Regis
+sudo docker pull peize/map3d
 ```
 #### Run Map3D-Regis
 You can run the following commands to run Map3D Registration pipeline. You may change the `input_dir` and the list of indexes, and then you will have the final segmentation results in `output_dir`. Please refer to [DATA.md](https://github.com/hrlblab/Map3D/blob/main/DATA.md) for input data format requirement and data arrangement.
@@ -57,7 +57,7 @@ export input_dir=/home/input_dir
 export output_dir=$input_dir/output
 
 # run the docker
-sudo nvidia-docker run -it --rm -v $input_dir:/INPUTS -v $output_dir:/OUTPUTS hrlblab/MAP3D-Regis
+sudo nvidia-docker run -it --rm -v $input_dir:/INPUTS -v $output_dir:/OUTPUTS peize/map3d
 
 # Enter a comma seperated list of indexes to indicate which image should be used as the middle section image in each case
 2,3,5
