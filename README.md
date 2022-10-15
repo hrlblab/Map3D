@@ -112,7 +112,7 @@ If set up correctly, the output for "no1" should look like
 Below is an example input of serial section WSIs of large tissue samples. These images are also contained in our demo dataset, which can be found in the "Data" Section above.
 <img src='Figure/before_scn.png' align="center" height="230px">
 
-Follow the same steps as for Needle Biopsy Tissue Samples. The output should look like 
+Follow the same steps as for needle biopsy tissue samples. The output should look like 
 <img src='Figure/after_scn.png' align="center" height="230px"> 
 
 
