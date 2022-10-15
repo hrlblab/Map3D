@@ -110,7 +110,7 @@ If set up correctly, the output for "no1" should look like
 
 ### Large Tissue Sample
 Below is an example input of serial section WSIs of large tissue samples. These images are also contained in our demo dataset, which can be found in the "Data" Section above.
-<img src="https://github.com/hrlblab/Map3D/blob/4bbb6abc4f74644ef86f0763a987be97615576e3/Figure/before_scn.png" height="700">
+<img src='Figure/before_scn.png' align="center" height="230px">
 
 Follow the same steps as for Needle Biopsy Tissue Samples. The result should look like 
 <img src='Figure/after_scn.png' align="center" height="230px"> 
