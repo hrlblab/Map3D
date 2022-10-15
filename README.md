@@ -68,7 +68,7 @@ Please refer to [Develop.md](https://github.com/hrlblab/Map3D/blob/main/DEVELOP.
 ## Data
 An example dataset of needle biopsy tissue samples for the pipeline can be found [here](https://vanderbilt.box.com/s/3lrrwxrk9wpw7gkgupfw1pzcgvuyv8uz). This dataset contains two different cases and each includes five .PNG files with 10X magnification.
 
-Another example dataset of large tissue sample can also be found [here](https://vanderbilt.box.com/s/9vjn2h50al2xn7f0f0spknoumlu0hvs2). This dataset contains a single case of seven .PNG files with 10X magnification.
+Another example dataset of large tissue samples can also be found [here](https://vanderbilt.box.com/s/9vjn2h50al2xn7f0f0spknoumlu0hvs2). This dataset contains a single case of seven .PNG files with 10X magnification.
 
 
 ## Map3D Registration Demo
