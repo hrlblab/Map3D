@@ -68,17 +68,20 @@ Please refer to [Develop.md](https://github.com/hrlblab/Map3D/blob/main/DEVELOP.
 ## Data
 An example dataset of needle biopsy tissue samples for the pipeline can be found [here](https://vanderbilt.box.com/s/3lrrwxrk9wpw7gkgupfw1pzcgvuyv8uz). This dataset contains two different cases and each includes five .PNG files with 10X magnification.
 
+Another example dataset of large tissue sample can also be found [here](https://vanderbilt.box.com/s/9vjn2h50al2xn7f0f0spknoumlu0hvs2). This dataset contains a single case of seven .PNG files with 10X magnification.
+
 
 ## Map3D Registration Demo
+### Needle Biopsy Tissue Samples
 <img src="https://github.com/hrlblab/Map3D/blob/main/Figure/Needle_figure.png" height="700">
 
 Below is an example input of serial section WSIs of needle biopsy tissue samples. These images are contained in our demo dataset, which can be found in the "Data" Section above.
 
 <img src='Figure/before.png' align="center" height="230px"> 
 
-- The entire pipeline is at the [Map3D-pipeline](Map3D-pipeline/)folder
+- The entire pipeline is at the [Map3D-pipeline](Map3D-pipeline/) folder
 - Create an empty folder in the [Map3D-pipeline](Map3D-pipeline/) folder and name it as "input_png". Put folders that contain 10X magnification PNG files into "input_png" folder. For guidance and instruction for input data format requirement and data arrangement, please refer to [DATA.md](https://github.com/hrlblab/Map3D/blob/main/DATA.md).
-- Run the python scripts as following orders:
+- Use our docker image as shown in "Quick Start" Section or run the python scripts as following orders:
   1. [Step1_superglue.py](https://github.com/hrlblab/Map3D/blob/main/Map3D-pipeline/Step1_superglue.py)
   ```
   python Step1_superglue.py
@@ -104,6 +107,13 @@ Below is an example input of serial section WSIs of needle biopsy tissue samples
 If set up correctly, the output for "no1" should look like
 
 <img src='Figure/after.png' align="center" height="230px"> 
+
+### Large Tissue Sample
+Below is an example input of serial section WSIs of large tissue samples. These images are also contained in our demo dataset, which can be found in the "Data" Section above.
+<img src='Figure/before_scn.png' align="center" height="230px">
+
+Follow the same steps as for needle biopsy tissue samples. The output should look like 
+<img src='Figure/after_scn.png' align="center" height="230px"> 
 
 
 ## Citation
