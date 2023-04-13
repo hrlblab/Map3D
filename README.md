@@ -6,7 +6,8 @@
 This is the official implementation of Map3D-Registration: An End-to-end Pipeline for 3D Slide-wise Multi-stain Renal Pathology Registration
 
 ![Overview1](https://github.com/hrlblab/Map3D/blob/main/Figure/IEEE%20TMI%20Map3D.png)<br />
-![Overview2](https://github.com/hrlblab/Map3D/blob/main/Figure/pipeline.png)<br />
+![Overview2](https://github.com/hrlblab/Map3D/blob/main/Figure/scope.png)<br />
+![Overview3](https://github.com/hrlblab/Map3D/blob/main/Figure/pipeline.png)<br />
 
 **IEEE Transactions on Medical Imaging Paper** <br />
 > [Map3D: Registration Based Multi-Object Tracking
