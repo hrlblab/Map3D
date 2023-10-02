@@ -119,11 +119,35 @@ Follow the same steps as for needle biopsy tissue samples. The output should loo
 ## Citation
 ```
 @article{deng2021map3d,
-title={Map3D: registration based multi-object tracking on 3D serial whole slide images},
-author={Ruining Deng, Haichun Yang, Aadarsh Jha, Yuzhe Lu, Chu Peng, Agnes B. Fogo, and Yuankai Huo},
-journal={IEEE Transactions on Medical Imaging},
-year={2021},
-publisher={IEEE},
-url={https://arxiv.org/pdf/2006.06038.pdf}
+  title={Map3D: Registration-Based Multi-Object Tracking on 3D Serial Whole Slide Images},
+  author={Deng, Ruining and Yang, Haichun and Jha, Aadarsh and Lu, Yuzhe and Chu, Peng and Fogo, Agnes B and Huo, Yuankai},
+  journal={IEEE transactions on medical imaging},
+  volume={40},
+  number={7},
+  pages={1924--1933},
+  year={2021},
+  publisher={IEEE}
 }
+
+@inproceedings{li2023end,
+  title={An end-to-end pipeline for 3D slide-wise multi-stain renal pathology registration},
+  author={Li, Peize and Deng, Ruining and Huo, Yuankai},
+  booktitle={Medical Imaging 2023: Digital and Computational Pathology},
+  volume={12471},
+  pages={96--101},
+  year={2023},
+  organization={SPIE}
+}
+
+@inproceedings{deng2022dense,
+  title={Dense multi-object 3D glomerular reconstruction and quantification on 2D serial section whole slide images},
+  author={Deng, Ruining and Yang, Haichun and Asad, Zuhayr and Zhu, Zheyu and Wang, Shiru and Wheless, Lee E and Fogo, Agnes B and Huo, Yuankai},
+  booktitle={Medical Imaging 2022: Digital and Computational Pathology},
+  volume={12039},
+  pages={83--90},
+  year={2022},
+  organization={SPIE}
+}
+
+
 ```
