@@ -3,7 +3,10 @@
 ### [[Accelerated Pipeline Docker]](https://hub.docker.com/r/peize/map3d)[[Project Page]](https://github.com/hrlblab/Map3D)[[IEEE TMI Paper]](https://arxiv.org/pdf/2006.06038.pdf)[[SPIE 2022 Paper]](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12039/120390F/Dense-multi-object-3D-glomerular-reconstruction-and-quantification-on-2D/10.1117/12.2611957.full?SSO=1)[[SPIE 2023 Paper]](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12471/124710F/An-end-to-end-pipeline-for-3D-slide-wise-multi/10.1117/12.2654542.full)<br />
 
 
-This is the official implementation of Map3D-Registration: An End-to-end Pipeline for 3D Slide-wise Multi-stain Renal Pathology Registration
+This is the official implementation of Map3D-Registration: An End-to-end Pipeline for 3D Slide-wise Multi-stain Renal Pathology Registration <br />
+
+The latest pipeline can be found in [folder](https://github.com/hrlblab/Map3D/tree/main/Map3D_2025). <br />
+
 
 ![Overview1](https://github.com/hrlblab/Map3D/blob/main/Figure/IEEE%20TMI%20Map3D.png)<br />
 ![Overview2](https://github.com/hrlblab/Map3D/blob/main/Figure/scope.png)<br />
